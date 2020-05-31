@@ -1,0 +1,13 @@
+version: "3.2"
+services:
+  airsonic:
+    container_name: airsonic
+    build: .
+    restart: always
+    ports:
+      - 4040:4040
+    volumes:
+      - ./data/music:/airsonic/music
+      - ./data/data:/airsonic/data
+      - ./data/playlists:/airsonic/playlists
+      - ./data/podcasts:/airsonic/podcasts
